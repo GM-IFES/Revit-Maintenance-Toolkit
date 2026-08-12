@@ -1,0 +1,191 @@
+{
+  "Uuid": "6105a8f1-cbb4-4b99-9e3f-979b3b961879",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Rotina 01 – Inserir Parâmetros Compartilhados_v02",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "d076c5955ed546a89f204d36476c44e3",
+      "Name": "File Path",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "E:\\ARTIGO IFC\\BIM+DYNAMO\\rotina finalizada\\Parametros\\Parametros_compartilhados.txt",
+      "Description": "Permite selecionar um arquivo no sistema e retornar seu caminho"
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "88acb85bed8b4db180c961dd39f7bca9",
+      "Name": "Python Script",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Executa um script Python incorporado."
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "Id": "d076c5955ed546a89f204d36476c44e3",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "75962db5054740ee82c126e910d889a5",
+          "Name": "",
+          "Description": "Caminho do arquivo",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite selecionar um arquivo no sistema e retornar seu caminho",
+      "HintPath": "E:\\ARTIGO IFC\\BIM+DYNAMO\\rotina finalizada\\Parametros\\Parametros_compartilhados.txt",
+      "InputValue": "E:\\ARTIGO IFC\\BIM+DYNAMO\\rotina finalizada\\Parametros\\Parametros_compartilhados.txt"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "import clr\r\nclr.AddReference(\"RevitServices\")\r\nfrom RevitServices.Persistence import DocumentManager\r\n\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import *\r\n\r\n# Documento e aplicação\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuiapp = DocumentManager.Instance.CurrentUIApplication\r\napp = uiapp.Application\r\n\r\n# Caminho do arquivo TXT de parâmetros compartilhados (input do Dynamo)\r\nshared_params_file = IN[0]\r\n\r\n# Configura o Revit para usar este arquivo\r\napp.SharedParametersFilename = shared_params_file\r\n\r\n# Feedback para o usuário\r\nOUT = \"✅ Arquivo de parâmetros compartilhados registrado no Revit:\\n{}\".format(shared_params_file)\r\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "88acb85bed8b4db180c961dd39f7bca9",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "05e1173c20d74b9f8551ecbea939ea36",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8e6784de696644079015f2a7900ff3a3",
+          "Name": "OUT",
+          "Description": "Resultado do script Python",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Executa um script Python incorporado."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "75962db5054740ee82c126e910d889a5",
+      "End": "05e1173c20d74b9f8551ecbea939ea36",
+      "Id": "34b8fb8568ab41c6ba0722c72bb9d759",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "Nenhum",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.1.9895",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Visualização do plano de fundo",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "d076c5955ed546a89f204d36476c44e3",
+        "Name": "File Path",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 110.86827934932558,
+        "Y": 478.1317206506744
+      },
+      {
+        "Id": "88acb85bed8b4db180c961dd39f7bca9",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 704.6693727046263,
+        "Y": 478.1854858560696
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "bea5cb0bb2b94c57b0d5a3c6ec1e8c93",
+        "Title": "Criação dos parâmetros compartilhados ",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "d076c5955ed546a89f204d36476c44e3",
+          "88acb85bed8b4db180c961dd39f7bca9"
+        ],
+        "HasNestedGroups": false,
+        "Left": 100.86827934932558,
+        "Top": 405.1317206506744,
+        "Width": 787.8010933553007,
+        "Height": 214.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 478.1317206506744,
+        "InitialHeight": 171.0,
+        "TextblockHeight": 63.0,
+        "Background": "#FFA4E1FF"
+      }
+    ],
+    "X": 125.452104707476,
+    "Y": -48.627031420213314,
+    "Zoom": 1.1517030789419394
+  }
+}
