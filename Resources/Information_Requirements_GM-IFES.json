@@ -1,0 +1,90 @@
+[
+  {
+    "SharedParameterName": "AssetName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "AssetDescription",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "AssetSpecification",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "AssetConditionClass",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "ContactInformation",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "SpaceName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "ComponentName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "SystemName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "SystemDescription",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "ConnectionName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "IssueName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "IssueDescription",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "IssueType",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "ImpactName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "ImpactDescription",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "TaskName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "TaskDescription",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "TaskStatus",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "ResourceName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "DocumentReference",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "ReplacementName",
+    "Instance": true
+  },
+  {
+    "SharedParameterName": "ReplacementDescription",
+    "Instance": true
+  }
+]
